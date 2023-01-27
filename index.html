@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script defer src="./fetch.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background-color: rgb(255, 240, 233);
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .banner {
+            width: 100%;
+            height: 80vh;
+            font-size: 1.5vw;
+        }
+
+        .banner_image {
+            position: absolute;
+            right: 6vw;
+            top: 6vh;
+            max-height: 68vh;
+            object-fit: cover;
+            font-size: 0.75rem;
+        }
+
+        .banner_image > img {
+            max-height: 68vh;
+            object-fit: cover;
+        }
+
+        .banner_text {
+            position: absolute;
+            top: 10vh;
+            left: 6vw;
+            z-index: 1;
+        }
+
+        .banner h1,.banner span {
+            background-image: linear-gradient(to right, rgb(235, 132, 73) 40%, rgb(238, 187, 157));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            -webkit-text-stroke: 0.015em rgb(175, 94, 48);
+        }
+
+        .banner h1 {
+            font-size: 2em;
+        }
+
+        .banner span {
+            font-size: 1.5em;
+        }
+
+        main {
+            display: grid;
+            justify-content: center;
+            width: 60%;
+            margin: auto;
+            grid-template-columns: repeat(auto-fit, 150px);
+            grid-column-gap: 12px;
+            grid-row-gap: 12px;
+        }
+
+        input {
+            border: 0;
+            color: rgb(255, 249, 247);
+            background-color: rgb(175, 94, 48);
+            padding: 0.5em 0.75em;
+            border-radius: 4px;
+            font-size: 1.25rem;
+            font-family: inherit;
+
+            display: block;
+            margin: 2vw auto;
+        }
+
+        input:hover {
+            color: rgb(241, 223, 216);
+            background-color: rgb(131, 69, 33);
+        }
+
+        .image_container {
+            width: min-content;
+            min-width: 150px;
+            position: relative;
+            border-radius: 6px;
+            overflow: hidden;
+            isolation: isolate;
+            cursor: pointer;
+            border: 2px solid rgb(175, 94, 48);
+        }
+
+        .image_thumb {
+            display: block;
+            width: max-content;
+            height: max-content;
+        }
+
+        .image_container_text {
+            position: absolute;
+            bottom: 0;
+            width: 150px;
+            padding: 0.15em 0.15em 0.25em 0.15em;
+            box-sizing: border-box;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            pointer-events: none;
+            opacity: 0;
+            transition: 80ms;
+        }
+
+        .image_container:hover > .image_container_text {
+            opacity: 1;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.25);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            z-index: 3;
+        }
+
+        .overlay_display {
+            width: min-content;
+            background-color: #eee;
+            margin: auto;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .overlay_display img {
+            display: block;
+        }
+
+        .overlay_display img:first-of-type {
+            margin: auto;
+        }
+
+        .overlay_display > span {
+            font-size: 1.25rem;
+            text-align: left;
+            box-sizing: border-box;
+            padding: 0 1vw;
+            display: block;
+        }
+
+        .overlay_display > span:first-of-type {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .overlay_profile {
+            display: flex;
+            padding: 1vw;
+            box-sizing: border-box;
+        }
+
+        .overlay_profile p {
+            padding: 0 1vw;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="banner_text">
+            <h1>
+                Welcome to our annual Touhou fumo festival.
+            </h1>
+            <span>
+                Check out the endless contributions by the community!
+            </span>
+        </div>
+        <div class="banner_image">
+            <img src="https://i.imgur.com/e4sNrLo.jpg" alt="">
+            <footer>
+                Foto from @Yumemimeme (twitter)
+            </footer>
+        </div>
+    </div>
+    <main>
+        <!-- content -->
+    </main>
+    <input type="button" value="View more posts" id="btn">
+</body>
+</html>
